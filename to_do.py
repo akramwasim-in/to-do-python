@@ -44,7 +44,7 @@ def to_do():
             if not to_do_list:
                 print("Empty list! ")
             else:
-                print("\n--- Today's Task Report (Pandas DataFrame) ---")
+                print("\n--- Today's Task Report  ---")
                 df = pd.DataFrame(to_do_list, columns=["Task Name"])
                 df.index = df.index + 1  
                 print(df)
