@@ -13,7 +13,7 @@ A clean, interactive Command Line Interface (CLI) To-Do List application built i
 
 ---
 
-## 🛠️ Prerequisites & Installation
+## Prerequisites & Installation
 
 Make sure you have Python installed on your system along with the `pandas` library.
 
