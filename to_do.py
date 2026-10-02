@@ -13,19 +13,32 @@ def to_do():
             continue
 
         if action == 1:
-            add = input("Enter your task name: ")
-            to_do_list.append(add)
-            print("Task added !")
+            task = input("Enter task name: ").strip()
+            if task:
+                to_do_list.append(task)
+                print(f" Task '{task}' added successfully!")
+            else:
+                print("Task name cannot be empty.")
 
         elif action == 2:
-            old_task = input("Which task you want to update?: ")
-            if old_task in to_do_list:
-                new_task = input("Enter new task: ")
-                idx = to_do_list.index(old_task) 
-                to_do_list[idx] = new_task        
-                print("Task updated!")
+            if not to_do_list:
+                print("List is empty! Add some tasks first.")
+                continue
+            
+            task_num = input("Enter task number to update (or type task name): ").strip()
+            
+            if task_num.isdigit() and 1 <= int(task_num) <= len(to_do_list):
+                idx = int(task_num) - 1
+                new_task = input("Enter new task: ").strip()
+                to_do_list[idx] = new_task
+                print(" Task updated successfully!")
+            elif task_num in to_do_list:
+                idx = to_do_list.index(task_num)
+                new_task = input("Enter new task: ").strip()
+                to_do_list[idx] = new_task
+                print(" Task updated successfully!")
             else:
-                print("This task is not in list.")
+                print("Task not found in list.")
 
         elif action == 3:
             if not to_do_list:
